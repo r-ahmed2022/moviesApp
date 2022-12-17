@@ -1,0 +1,250 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Slab', serif;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.container {
+    max-width: 960px;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: -2px -2px 2px 4px #ccc;
+}
+
+.wrapper {
+    max-width: 960px;
+    height: auto;
+    scroll-behavior: auto;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: -2px -2px 2px 4px #ccc;
+}
+
+#navbar {
+    width: 100%;
+    position: relative;
+    margin-bottom: 5px;
+    padding: 0;
+    height: 20%;
+    background: url("images/header.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.title {
+    font-family: Inter;
+    font-size: 43px;
+    font-weight: 800;
+    line-height: 24px;
+    letter-spacing: -0.045em;
+    text-align: justified;
+     color: #FFFFFF;
+
+}
+
+.watchlist {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em; 
+    text-align: right;
+    color: #FFFFFF;
+
+}
+
+#searchbar {
+display: flex;
+align-items: center;
+padding: 0px;
+position: absolute;
+width: 90%;
+height: 38px;
+left: 30px;
+top: 120px;
+background: #FFFFFF;
+border: 1px solid #D1D5DB;
+box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+border-radius: 6px;
+}
+
+#search {
+width: 342px;
+height: 30px;
+padding: 3px 13px;
+border: none;
+flex: none;
+order: 0;
+flex-grow: 1;
+}
+
+#search-btn {
+padding: 9px 0 7px 0;
+width: 100px;
+height: 38px;
+background: #F9FAFB;
+border: 1px solid #D1D5DB;
+border-radius: 0px 6px 6px 0px;
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+cursor: pointer;
+}
+
+#search-btn:hover {
+    background: #ccc;
+}
+
+#movielist {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: 50px 0;
+    padding: 5px 0;
+    background: url("images/no-data-initial.svg");
+    background-size: auto 25%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#favorites {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin: 50px 0;
+    padding: 5px 0;
+    background: url("images/no-data-initial.svg");
+    background-size: auto 25%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    min-height: 200px;
+    gap: 30px;
+}
+
+#title {
+    margin: 0 0 0 -10px;
+    justify-self: start;
+}
+.poster {
+    height: 100%;
+    width: 20%;
+}
+
+#info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+#rating-etc {
+      display: flex;
+      justify-content: start;
+      align-items: start;
+      list-style: none;
+      position: relative;
+    } 
+    
+  .rating-info {
+        margin-right: 20px;
+        font-size: 0.8rem;
+        
+    }
+    
+ .add {
+    margin: 0;
+    padding-bottom: -20px;
+    
+}
+    
+    
+.img {
+    width: 100px;
+    height: 90%;
+    margin: 10px;
+}
+
+#title-div {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    align-items: center;
+}
+
+.rating {
+    margin: 15px;
+    font-size: 1rem;
+    margin: 10px 0 10px 5px;
+}
+
+.checked {
+  color: orange;
+  margin: 10px 0 10px 15px;
+  padding: 10px 0;
+}
+
+
+#watch-btn {
+    border: 0;
+    background: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: -5px;
+    left: 220px;
+    cursor: pointer;
+   }
+
+#movie-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    margin: 0;
+    padding: 0;
+}
+
+#description {
+    margin-top: 20px;
+    width: auto;
+    padding: 0 5px;
+}
+
+.movie-description {
+    padding: 5px 0;
+    margin: 5px 0px; 
+    font-size: 1.2rem;
+}
+
