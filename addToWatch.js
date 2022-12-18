@@ -30,7 +30,7 @@ movielist.forEach((element) => {
                       <li class="rating-info add">
                           <button type="button" id="watch-btn"
                            onclick="removeMovie(${id})"> 
-                              <i class="small material-icons add">do_not_disturb_on</i>
+                              <i class="small material-icons add">do_not_disturb_on</i>Remove
                           </button>
                      </li>
               </ul>

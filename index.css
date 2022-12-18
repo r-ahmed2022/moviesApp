@@ -24,7 +24,7 @@ html, body {
 .wrapper {
     max-width: 960px;
     height: auto;
-    scroll-behavior: auto;
+    overflow: auto;
     display: flex;
     margin: 0 auto;
     padding: 0;
@@ -68,8 +68,13 @@ html, body {
     letter-spacing: 0em; 
     text-align: right;
     color: #FFFFFF;
-
+  
 }
+
+.watchlist:hover {
+    background: orange;
+    color: #000;
+} 
 
 #searchbar {
 display: flex;
@@ -79,7 +84,7 @@ position: absolute;
 width: 90%;
 height: 38px;
 left: 30px;
-top: 120px;
+top: 80px;
 background: #FFFFFF;
 border: 1px solid #D1D5DB;
 box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
@@ -93,7 +98,7 @@ padding: 3px 13px;
 border: none;
 flex: none;
 order: 0;
-flex-grow: 1;
+flex: 1 1;
 }
 
 #search-btn {
@@ -106,7 +111,7 @@ border-radius: 0px 6px 6px 0px;
 flex: none;
 order: 1;
 align-self: stretch;
-flex-grow: 0;
+flex-grow: 1 1 0;
 cursor: pointer;
 }
 
@@ -149,14 +154,16 @@ cursor: pointer;
     justify-content: center;
     align-items: center;
     width: 90%;
-    min-height: 200px;
+    height: auto;
     gap: 30px;
 }
 
 #title {
     margin: 0 0 0 -10px;
     justify-self: start;
+    font-weight: 700;
 }
+
 .poster {
     height: 100%;
     width: 20%;
@@ -222,7 +229,7 @@ cursor: pointer;
     margin: 0;
     padding: 0;
     position: absolute;
-    top: -5px;
+    top: -15px;
     left: 220px;
     cursor: pointer;
    }
@@ -248,3 +255,36 @@ cursor: pointer;
     font-size: 1.2rem;
 }
 
+@media only screen and (max-width: 500px) {
+
+    .container {
+        width: 100%;
+    }
+    #searchbar {
+        width: 100%;
+        left: 0px;
+        top: 70px;
+    }    
+
+    #movie-info  {
+       justify-content: space-around;
+    }
+     #title {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-left: 0;
+     }
+
+     #movie-info {
+      padding: 0 10px;
+     }
+
+     #description {
+      padding: 0 0 0 1px;
+    }
+
+    .movie-description {
+        font-size: 0.9rem;
+    }
+
+  }
