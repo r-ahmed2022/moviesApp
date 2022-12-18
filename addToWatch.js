@@ -1,7 +1,18 @@
 
 const main = document.getElementById("favorites");
-
+const nomovies = document.getElementById("no-movies")
 const movielist = JSON.parse(localStorage.getItem("watchList"))
+if(movielist.length === 0) {
+   nomovies.style.visibility = "visible"
+   nomovies.style.width = "auto"
+   nomovies.style.height = "auto"
+  // document.location.replace("index.html")
+
+}
+
+const goWishList = () => {
+   document.location.replace("index.html")
+}
 
 window.removeMovie = (id) => {
    const updatedlist = movielist.filter((movie) => {
@@ -30,9 +41,10 @@ movielist.forEach((element) => {
                       <li class="rating-info add">
                           <button type="button" id="watch-btn"
                            onclick="removeMovie(${id})"> 
-                              <i class="small material-icons add">do_not_disturb_on</i>Remove
+                              <i class="small material-icons add">do_not_disturb_on</i>
                           </button>
                      </li>
+                     <li><span class="add-watch">Remove</span></li>
               </ul>
           </div>
           <div id="description">

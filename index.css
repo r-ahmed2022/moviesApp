@@ -179,9 +179,8 @@ cursor: pointer;
 #rating-etc {
       display: flex;
       justify-content: start;
-      align-items: start;
+      align-items: center;
       list-style: none;
-      position: relative;
     } 
     
   .rating-info {
@@ -192,7 +191,7 @@ cursor: pointer;
     
  .add {
     margin: 0;
-    padding-bottom: -20px;
+   align-self: center;
     
 }
     
@@ -222,15 +221,43 @@ cursor: pointer;
   padding: 10px 0;
 }
 
+#no-movies {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    align-self: center;
+    width: 0;
+    height: 0;
+}
+
+.no-movies-title {
+    font-family: Inter;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 29px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #DFDDDD;
+}
+
+.add-movies {
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
 
 #watch-btn {
     border: 0;
     background: none;
-    margin: 0;
+    margin: 5px 0;
     padding: 0;
-    position: absolute;
-    top: -15px;
-    left: 220px;
     cursor: pointer;
    }
 
