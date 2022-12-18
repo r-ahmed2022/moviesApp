@@ -43,7 +43,7 @@ document.getElementById("searchbar").addEventListener('submit',  async (e) => {
                             <li class="rating-info add">
                                 <button type="button" id="watch-btn"
                                  onclick="addToWatch(favorites)"> 
-                                    <i class="small material-icons add">add_circle</i>
+                                    <i class="small material-icons add">add_circle</i>Watchlist
                                 </button>
                            </li>
                     </ul>
