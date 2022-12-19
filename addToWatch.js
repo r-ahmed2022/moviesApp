@@ -23,8 +23,9 @@ const removeMovie = (id) => {
    const updatedlist = movielist.filter((movie) => {
          return movie.imdbID != id
    })
+  M.toast({html: 'Movie deleted from WatchList'})
   localStorage.setItem('wishList', JSON.stringify(updatedlist));
-  window.location.reload();
+  location.reload()
 }
 
 

@@ -52,10 +52,9 @@ const addMovie = (movie) => {
    await fetch(`https://www.omdbapi.com/?apikey=${apikey}&i=${movie.imdbID}`)
    .then(response => response.json())
    .then(data => {
-       console.log(data)
        movies.push(data)
        localStorage.setItem('wishList', JSON.stringify(movies))
-       window.location.reload();
+       M.toast({html: 'Movie added to Watchlist'} )
    })
    .catch(err => console.log(err))
   })
