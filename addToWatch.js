@@ -50,7 +50,7 @@ const showWatchList = (movie) => {
    titlediv.appendChild(title)
    const rating = document.createElement('span')
    rating.setAttribute("id", "rating")
-   rating.innerHTML = `${movie.Year}`
+   rating.innerHTML = `<span class="fa fa-star checked"></span>${movie.imdbRating}`
    titlediv.appendChild(rating)
    movieinfo.appendChild(titlediv)
    const ratingetc = document.createElement('ul')
@@ -58,11 +58,11 @@ const showWatchList = (movie) => {
    movieinfo.appendChild(ratingetc)
   const movieid = document.createElement('li')
   movieid.classList.add("rating-info")
-  movieid.innerHTML = `<b>ID: </b>${movie.imdbID}`
+  movieid.innerHTML = `<b>ID: </b>${movie.Runtime}`
   ratingetc.appendChild(movieid)
   const movietype = document.createElement('li')
   movietype.classList.add("rating-info")
-  movietype.innerHTML = `<b>Type:</b> ${movie.Type}`
+  movietype.innerHTML = `<b>Type:</b> ${movie.Genre}`
   ratingetc.appendChild(movietype)
   const moviefavorite = document.createElement('li')
   moviefavorite.classList.add("rating-info")
@@ -79,9 +79,24 @@ const showWatchList = (movie) => {
   const watchlist = document.createElement('li')
   const span = document.createElement('span')
   span.classList.add("add-watch")
-  span.innerHTML = `Watchlist`
+  span.innerHTML = `Remove`
   watchlist.appendChild(span)
   ratingetc.appendChild(watchlist)
+  const director = document.createElement('ul')
+  const directorinfo= document.createElement('li')
+  directorinfo.classList.add("rating-info")
+  directorinfo.innerHTML = `<b>Director: </b>${movie.Director}`
+  director.innerHTML = `Date: - <li class="rating-info">${movie.Released}</li>
+                        Rated : - <li class="rating-info">${movie.Rated}</li>`
+  director.appendChild(directorinfo)
+  director.setAttribute("class", "detail")
+  movieinfo.appendChild(director)
+  const desc = document.createElement('div')
+  desc.setAttribute("id", "description")
+   const description = document.createElement('p') 
+   description.innerHTML = `${movie.Plot}`
+   desc.appendChild(description)
+   movieinfo.append(desc) 
    main.appendChild(card)
 }
 

@@ -48,18 +48,16 @@ const addMovie = (movie) => {
   moviefavorite.classList.add("add")
   const addmovie = document.createElement('button')
   addmovie.setAttribute("id", "watch-btn")
-  addmovie.addEventListener('click', () => {
-   movies.push(
-      {
-         imdbID: movie.imdbID,
-         Title: movie.Title,
-         Year: movie.Year,
-         Type: movie.Type,
-         Poster: movie.Poster
-      }  
-   )
-   localStorage.setItem('wishList', JSON.stringify(movies))
-   window.location.reload();
+  addmovie.addEventListener('click', async () => {
+   await fetch(`https://www.omdbapi.com/?apikey=${apikey}&i=${movie.imdbID}`)
+   .then(response => response.json())
+   .then(data => {
+       console.log(data)
+       movies.push(data)
+       localStorage.setItem('wishList', JSON.stringify(movies))
+       window.location.reload();
+   })
+   .catch(err => console.log(err))
   })
   addmovie.innerHTML = `<i class="small material-icons add">add_circle</i>`
   moviefavorite.append(addmovie)
@@ -85,8 +83,7 @@ document.getElementById("searchbar").addEventListener('submit',  async (e) => {
     .then(data => {
               data.Error  ?  M.toast({html: JSON.stringify(data.Error)} ) :
              data.Search.map((movie) => { 
-             //  favorites = movie
-              addMovie(movie)         
+            addMovie(movie)         
               })
             
 

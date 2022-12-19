@@ -182,11 +182,18 @@ cursor: pointer;
       align-items: center;
       list-style: none;
     } 
+
+    .detail {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        list-style: none;
+    }
     
   .rating-info {
         margin-right: 20px;
         font-size: 0.8rem;
-        
+         font-weight: 500;
     }
     
  .add {
