@@ -328,6 +328,7 @@ cursor: pointer;
      }
 
      #movie-info {
+    
       padding: 0 10px;
      }
 
@@ -336,13 +337,13 @@ cursor: pointer;
     }
 
     .poster {
-        height: 30%;
+        height: 25%;
         width: 100%;
         
     }
 
     .img {
-        width: 90%;
+        width: auto;
         height: 80%;
         margin: 15px;
     }
