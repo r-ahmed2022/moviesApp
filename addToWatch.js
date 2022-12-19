@@ -60,7 +60,7 @@ const showWatchList = (movie) => {
    movieinfo.appendChild(ratingetc)
   const movieid = document.createElement('li')
   movieid.classList.add("rating-info")
-  movieid.innerHTML = `<b>ID: </b>${movie.Runtime}`
+  movieid.innerHTML = `<b>Duration: </b>${movie.Runtime}`
   ratingetc.appendChild(movieid)
   const movietype = document.createElement('li')
   movietype.classList.add("rating-info")
