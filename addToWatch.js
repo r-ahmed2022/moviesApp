@@ -51,7 +51,7 @@ const showWatchList = (movie) => {
    titlediv.appendChild(title)
    const rating = document.createElement('span')
    rating.setAttribute("id", "rating")
-   rating.innerHTML = `<span class="fa fa-star checked"></span>${movie.imdbRating}`
+   rating.innerHTML = `<span class="fa fa-star checked"> </span>${movie.imdbRating} / 10`
    titlediv.appendChild(rating)
    titlediv.appendChild(rating)
    movieinfo.appendChild(titlediv)
