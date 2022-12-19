@@ -1,72 +1,101 @@
 const main = document.getElementById("movielist");
 let apikey = '8dbfc7eb'
 const query = document.getElementById("search")
-let favorites = null
-let movies = JSON.parse(localStorage.getItem("watchList")) || []
+let favorites = null;
+let movies = JSON.parse(localStorage.getItem("wishList")) || []
 window.addToWatch = (data) => {
-   let id = Math.floor(Math.random() * 800 ) + 1;
-    movies.push(
+      
+}
+
+const addMovie = (movie) => {
+   const card = document.createElement('div')
+   card.classList.add("card")
+   const poster = document.createElement('div')
+   poster.classList.add("poster")
+   const img = document.createElement('img')
+   img.classList.add("img")
+   img.setAttribute("src", `${movie.Poster}` )
+   poster.appendChild(img)
+   poster.appendChild(img)
+   card.appendChild(poster);
+   const movieinfo = document.createElement('div')
+   movieinfo.setAttribute("id","movie-info")
+   card.appendChild(movieinfo)
+   const titlediv = document.createElement('div')
+   titlediv.setAttribute("id", "title-div")
+   const title = document.createElement('h2')
+   title.setAttribute("id", "title")
+   title.innerHTML = `${movie.Title}`
+   titlediv.appendChild(title)
+   const rating = document.createElement('span')
+   rating.setAttribute("id", "rating")
+   rating.innerHTML = `${movie.Year}`
+   titlediv.appendChild(rating)
+   movieinfo.appendChild(titlediv)
+   const ratingetc = document.createElement('ul')
+   ratingetc.setAttribute("id", "rating-etc")
+   movieinfo.appendChild(ratingetc)
+  const movieid = document.createElement('li')
+  movieid.classList.add("rating-info")
+  movieid.innerHTML = `<b>ID: </b>${movie.imdbID}`
+  ratingetc.appendChild(movieid)
+  const movietype = document.createElement('li')
+  movietype.classList.add("rating-info")
+  movietype.innerHTML = `<b>Type:</b> ${movie.Type}`
+  ratingetc.appendChild(movietype)
+  const moviefavorite = document.createElement('li')
+  moviefavorite.classList.add("rating-info")
+  moviefavorite.classList.add("add")
+  const addmovie = document.createElement('button')
+  addmovie.setAttribute("id", "watch-btn")
+  addmovie.addEventListener('click', () => {
+   movies.push(
       {
-      movie_id: id,
-      movie: data,
+         imdbID: movie.imdbID,
+         Title: movie.Title,
+         Year: movie.Year,
+         Type: movie.Type,
+         Poster: movie.Poster
       }  
    )
-   localStorage.setItem('watchList', JSON.stringify(movies))
+   localStorage.setItem('wishList', JSON.stringify(movies))
    window.location.reload();
+  })
+  addmovie.innerHTML = `<i class="small material-icons add">add_circle</i>`
+  moviefavorite.append(addmovie)
+  ratingetc.appendChild(moviefavorite)
+  const watchlist = document.createElement('li')
+  const span = document.createElement('span')
+  span.classList.add("add-watch")
+  span.innerHTML = `Watchlist`
+  watchlist.appendChild(span)
+  ratingetc.appendChild(watchlist)
+   main.appendChild(card)
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
-
 document.getElementById("searchbar").addEventListener('submit',  async (e) => {
     e.preventDefault();
-    query.value === '' ? M.toast({html: 'Enter Movie name', classes: 'rounded'}) : await fetch(`https://www.omdbapi.com/?apikey=${apikey}&t=${query.value}`)
+    main.innerHTML = ''
+    query.value === '' ? M.toast({html: 'Enter Movie name', classes: 'rounded'}) : 
+    await fetch(`https://www.omdbapi.com/?apikey=${apikey}&s=${query.value}`)
     .then(response => {
          return response.json() 
         })
     .then(data => {
-         favorites = data;
-         data.Title === undefined  ?  M.toast({html: JSON.stringify(data.Error)} ) :
-          main.innerHTML = `
-          <div class="card">
-             <div class="poster"><img class="img" src="${data.Poster}" /></div>
-             <div id="movie-info">
-                <div id="info">
-                    <div id="title-div">
-                      <h2 id="title">${data.Title}</h2> 
-                      <span class="fa fa-star checked rating"></span>
-                      <span class="rating">${data.imdbRating} </span>
-                    </div>
-                    <ul id="rating-etc">
-                            <li class="rating-info">${data.Runtime}</li>
-                            <li class="rating-info">${data.Genre}</li>
-                            <li class="rating-info add">
-                                <button type="button" id="watch-btn"
-                                 onclick="addToWatch(favorites)"> 
-                                    <i class="small material-icons add">add_circle</i>
-                                </button>
-                           </li>
-                           <li><span class="add-watch">Watchlist</span></li>
-                    </ul>
-                </div>
-                <div id="description">
-                  <p class="movie-description">${data.Plot}</p>
-                </div>
-             </div>
-          </div>
-         `
+              data.Error  ?  M.toast({html: JSON.stringify(data.Error)} ) :
+             data.Search.map((movie) => { 
+             //  favorites = movie
+              addMovie(movie)         
+              })
+            
+
       query.value = ''
-      // return data
-    })
-    .catch(err => console.log(err))
+        
+   
+    }).catch(err => console.log(err))
+   
    
 })
-
-
-
-})
-
-
-
 
 

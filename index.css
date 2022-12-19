@@ -125,7 +125,7 @@ cursor: pointer;
     justify-content: start;
     align-items: center;
     width: 100%;
-    height: 100vh;
+    height: auto;
     margin: 50px 0;
     padding: 5px 0;
     background: url("images/no-data-initial.svg");
@@ -151,15 +151,15 @@ cursor: pointer;
 
 .card {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 80%;
     height: auto;
     gap: 30px;
 }
 
 #title {
-    margin: 0 0 0 -10px;
+    margin: 0 50px 0 0;
     justify-self: start;
     font-weight: 700;
 }
@@ -199,18 +199,18 @@ cursor: pointer;
 .img {
     width: 100px;
     height: 90%;
-    margin: 10px;
+    margin: 10px 5px;
 }
 
 #title-div {
     display: flex;
     justify-content: space-between;
-    padding: 5px 0;
     align-items: center;
+    font-size: 1rem;
 }
 
 .rating {
-    margin: 15px;
+    margin: 15px 0 0 10px;
     font-size: 1rem;
     margin: 10px 0 10px 5px;
 }
@@ -262,13 +262,13 @@ cursor: pointer;
    }
 
 #movie-info {
+    height: 100%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    margin: 0;
-    padding: 0;
-}
+ }
 
 #description {
     margin-top: 20px;
