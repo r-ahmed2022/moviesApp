@@ -44,8 +44,8 @@ A movie app enabling movies search, adding favorite movies to watchlist
 
 ### Key Features <a name="key-features"></a>
 
-- **[user vs computer game]**
-- **[Responsive]**
+- **[movie search]**
+- **[Favorite movies watchlist]**
 - **[API enabled data]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
