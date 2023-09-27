@@ -25,7 +25,8 @@ const removeMovie = (id) => {
    })
   M.toast({html: 'Movie deleted from WatchList'})
   localStorage.setItem('wishList', JSON.stringify(updatedlist));
-  location.reload()
+  setTimeout(() => location.reload(), 1000)
+  
 }
 
 
